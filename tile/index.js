@@ -1,0 +1,1 @@
+export { BaseTile } from './BaseTile';
