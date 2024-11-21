@@ -1,6 +1,7 @@
 import { dedupeMixin } from '@open-wc/dedupe-mixin';
 import { html } from 'lit';
 import { ThemeMixin } from 'dark-theme-utils';
+import styleVariables from './styleVariables.css.js';
 import styles from './styles.css.js';
 
 export const SimbaButtonMixinImplementation = (superclass) =>
@@ -24,7 +25,7 @@ export const SimbaButtonMixinImplementation = (superclass) =>
     }
 
     static get styles() {
-      return [...super.styles, styles];
+      return [...super.styles, styleVariables, styles];
     }
 
     render() {

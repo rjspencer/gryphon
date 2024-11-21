@@ -1,121 +1,121 @@
 import { css } from 'lit';
 // import { tokens as t } from '../index.js'; // for some reason this doesn't work anymore
-import * as t from './_button.js';
+// import * as t from './_button.js';
 
 export default css`
   :host {
     display: inline-block;
     cursor: pointer;
-    background-color: ${t.backgroundColor};
-    color: ${t.contentColor};
-    border-radius: ${t.borderRadius};
-    font-family: ${t.contentFamily};
-    font-size: ${t.contentSize};
-    line-height: ${t.contentLineHeight};
-    font-weight: ${t.contentWeight};
-    padding: ${t.paddingVertical} ${t.paddingHorizontal};
+    background-color: var(--background-color);
+    color: var(--content-color);
+    border-radius: var(--border-radius);
+    font-family: var(--content-family);
+    font-size: var(--content-size);
+    line-height: var(--content-line-height);
+    font-weight: var(--content-weight);
+    padding: var(--padding-vertical) var(--padding-horizontal);
     transition: var(--theme-background-transition),
       var(--theme-color-transition);
   }
 
   :host(:hover) {
-    background-color: ${t.statesHoverBackgroundColor};
+    background-color: var(--states-hover-background-color);
   }
 
   :host(:active) {
-    background-color: ${t.statesActiveBackgroundColor};
+    background-color: var(--states-active-background-color);
   }
 
   :host(:focus:not([disabled])),
   :host(:focus-visible) {
-    box-shadow: ${t.statesFocusBorderShadowSize}
-      ${t.statesFocusBorderShadowColor};
+    box-shadow: var(--states-focus-border-shadow-size)
+      var(--states-focus-border-shadow-color);
     outline: none;
   }
 
   :host([variation='secondary']) {
-    background-color: ${t.variantsSecondaryBackgroundColor};
-    color: ${t.variantsSecondaryContentColor};
+    background-color: var(--variants-secondary-background-color);
+    color: var(--variants-secondary-content-color);
   }
 
   :host([variation='secondary']:hover) {
-    background-color: ${t.statesHoverVariantsSecondaryBackgroundColor};
+    background-color: var(--states-hover-variants-secondary-background-color);
   }
 
   :host([variation='secondary']:active) {
-    background-color: ${t.statesActiveVariantsSecondaryBackgroundColor};
+    background-color: var(--states-active-variants-secondary-background-color);
   }
 
   :host([variation='outline']) {
-    color: ${t.variantsOutlineContentColor};
+    color: var(--variants-outline-content-color);
   }
 
   :host([variation='text']) {
-    color: ${t.variantsTextContentColor};
+    color: var(--variants-text-content-color);
   }
 
   :host([variation='outline']) {
-    box-shadow: ${t.variantsOutlineBorderShadowSize}
-      ${t.variantsOutlineBorderShadowColor};
-    background-color: ${t.variantsOutlineBackgroundColor};
+    box-shadow: var(--variants-outline-border-shadow-size)
+      var(--variants-outline-border-shadow-color);
+    background-color: var(--variants-outline-background-color);
   }
 
   :host([variation='text']) {
-    background-color: ${t.variantsTextBackgroundColor};
+    background-color: var(--variants-text-background-color);
   }
 
   :host([variation='outline']:hover) {
-    background-color: ${t.statesHoverVariantsOutlineBackgroundColor};
+    background-color: var(--states-hover-variants-outline-background-color);
   }
 
   :host([variation='text']:hover) {
-    background-color: ${t.statesHoverVariantsTextBackgroundColor};
+    background-color: var(--states-hover-variants-text-background-color);
   }
 
   :host([variation='outline']:active) {
-    background-color: ${t.statesActiveVariantsOutlineBackgroundColor};
+    background-color: var(--states-active-variants-outline-background-color);
   }
 
   :host([variation='text']:active) {
-    background-color: ${t.statesActiveVariantsTextBackgroundColor};
+    background-color: var(--states-active-variants-text-background-color);
   }
 
   :host([variation='outline']:focus) {
-    box-shadow: ${t.statesFocusVariantsOutlineBorderShadowOneSize}
-        ${t.statesFocusVariantsOutlineBorderShadowOneColor},
-      ${t.statesFocusVariantsOutlineBorderShadowTwoSize}
-        ${t.statesFocusVariantsOutlineBorderShadowTwoColor};
+    box-shadow: var(--states-focus-variants-outline-border-shadow-one-size)
+        var(--states-focus-variants-outline-border-shadow-one-color),
+      var(--states-focus-variants-outline-border-shadow-two-size)
+        var(--states-focus-variants-outline-border-shadow-two-color);
   }
 
   :host([variation='text']:focus) {
-    box-shadow: ${t.statesFocusVariantsTextBorderShadowSize}
-      ${t.statesFocusVariantsTextBorderShadowColor};
+    box-shadow: var(--states-focus-variants-text-border-shadow-size)
+      var(--states-focus-variants-text-border-shadow-color);
   }
 
   :host([size='small']) {
-    font-size: ${t.sizesSmallContentSize};
-    line-height: ${t.sizesSmallContentLineHeight};
-    padding: ${t.sizesSmallPaddingVertical} ${t.sizesSmallPaddingHorizontal};
+    font-size: var(--sizes-small-content-size);
+    line-height: var(--sizes-small-content-line-height);
+    padding: var(--sizes-small-padding-vertical) var(--sizes-small-padding-horizontal);
   }
 
   :host([size='large']) {
-    font-size: ${t.sizesLargeContentSize};
-    line-height: ${t.sizesLargeContentLineHeight};
-    padding: ${t.sizesLargePaddingVertical} ${t.sizesLargePaddingHorizontal};
+    font-size: var(--sizes-large-content-size);
+    line-height: var(--sizes-large-content-line-height);
+    padding: var(--sizes-large-padding-vertical) var(--sizes-large-padding-horizontal);
   }
 
   :host([rounded]) {
-    border-radius: ${t.sizesRoundedBorderRadius};
+    border-radius: var(--sizes-rounded-border-radius);
   }
 
   :host([disabled]) {
-    filter: ${t.statesDisabledFilter};
+    filter: var(--states-disabled-filter);
     pointer-events: none;
   }
 
   :host([disabled][variation='primary']),
   :host([disabled]:not([variation])) {
-    background-color: ${t.statesDisabledBackgroundColor};
+    background-color: var(--states-disabled-background-color);
   }
 
   ::slotted([slot='suffix']),
@@ -124,32 +124,32 @@ export default css`
   }
 
   ::slotted([slot='suffix']) {
-    padding-left: ${t.suffixPaddingLeft} !important;
+    padding-left: var(--suffix-padding-left) !important;
   }
 
   ::slotted([slot='prefix']) {
-    padding-right: ${t.prefixPaddingRight} !important;
+    padding-right: var(--prefix-padding-right) !important;
   }
 
   :host([theme='dark'][variation='text']) {
-    color: ${t.themeDarkVariantsTextContentColor};
+    color: var(--theme-dark-variants-text-content-color);
   }
 
   :host([theme='dark'][variation='outline']) {
-    color: ${t.themeDarkVariantsOutlineContentColor};
+    color: var(--theme-dark-variants-outline-content-color);
   }
 
   :host([theme='dark'][variation='text']:hover) {
-    background-color: ${t.themeDarkStatesHoverVariantsTextBackgroundColor};
+    background-color: var(--theme-dark-states-hover-variants-text-background-color);
   }
   :host([theme='dark'][variation='outline']:hover) {
-    background-color: ${t.themeDarkStatesHoverVariantsOutlineBackgroundColor};
+    background-color: var(--theme-dark-states-hover-variants-outline-background-color);
   }
 
   :host([theme='dark'][variation='text']:active) {
-    background-color: ${t.themeDarkStatesActiveVariantsTextBackgroundColor};
+    background-color: var(--theme-dark-states-active-variants-text-background-color);
   }
   :host([theme='dark'][variation='outline']:active) {
-    background-color: ${t.themeDarkStatesActiveVariantsOutlineBackgroundColor};
+    background-color: var(--theme-dark-states-active-variants-outline-background-color);
   }
 `;
